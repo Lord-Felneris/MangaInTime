@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MangaInTime.View.SearchMangaView">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     IconImageSource="add.png"
+                     Command="{Binding AddNewMangaAsFavorite}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <HorizontalStackLayout Spacing="6">
+                <Label Text="URL:"
+                       FontAttributes="Bold"/>
+                <Label Text="{Binding BaseUrl}"
+                       FontAttributes="Bold"
+                       x:Name="currentUrl"/>
+            </HorizontalStackLayout>
+            <WebView Source="{Binding BaseUrl,Mode=TwoWay}"
+                     Navigated="Browser_Navigated"
+                     Grid.Row="1"
+                     x:Name="Browser"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

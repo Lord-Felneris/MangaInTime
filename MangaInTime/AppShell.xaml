@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MangaInTime.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:MangaInTime.View"
+    Shell.FlyoutBehavior="Disabled"
+    Title="MangaInTime">
+
+    <TabBar>
+        <ShellContent Title="Search Manga"
+                      Icon="search.png"
+                      ContentTemplate="{DataTemplate views:SearchMangaView}"/>
+        <ShellContent Title="Favorite Manga"
+                      Icon="favorite.png"
+                      ContentTemplate="{DataTemplate views:FavoriteMangaView}"/>
+        <ShellContent Title="User Prefrences"
+                      Icon="preference.png"
+                      ContentTemplate="{DataTemplate views:UserPreferencesView}"/>
+
+    </TabBar>
+</Shell>
